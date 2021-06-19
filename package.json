@@ -9,14 +9,16 @@
     "typescript": "^4.3.4"
   },
   "scripts": {
-      "prebuild": "rm -rf dist",
-      "build": "yarn test && tsc",
-    "test": "mocha -r ts-node/register 'tests/**/*.spec.ts'"
+    "prebuild": "rm -rf dist",
+    "build": "yarn test && tsc",
+    "pretest": "rm -rf test_report",
+    "test": "mocha -r ts-node/register 'tests/**/*.spec.ts' --reporter mochawesome --reporter-options reportDir=test_report,reportFilename=test_report"
   },
   "devDependencies": {
     "@types/chai": "^4.2.18",
     "@types/mocha": "^8.2.2",
     "chai": "^4.3.4",
+    "mochawesome": "^6.2.2",
     "ts-node": "^10.0.0"
   }
 }
