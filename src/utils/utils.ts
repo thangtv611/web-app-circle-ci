@@ -3,5 +3,5 @@ export const add = (a: number, b: number): number => {
 }
 
 export const sub = (a: number, b: number): number => {
-    return a / b;
+    return a - b;
 };
