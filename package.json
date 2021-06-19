@@ -1,24 +1,26 @@
 {
-  "name": "web-app",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mocha": "^9.0.1",
-    "typescript": "^4.3.4"
-  },
-  "scripts": {
-    "prebuild": "rm -rf dist",
-    "build": "yarn test && tsc",
-    "pretest": "rm -rf test_report",
-    "test": "mocha -r ts-node/register 'tests/**/*.spec.ts' --reporter mochawesome --reporter-options reportDir=test_report,reportFilename=test_report"
-  },
-  "devDependencies": {
-    "@types/chai": "^4.2.18",
-    "@types/mocha": "^8.2.2",
-    "chai": "^4.3.4",
-    "mochawesome": "^6.2.2",
-    "ts-node": "^10.0.0"
-  }
+    "name": "web-app",
+    "description": "test build with circleci",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "NOLISENCE",
+    "author": "Thang Tran (thangtv611@gmail.com)",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mocha": "^9.0.1",
+        "typescript": "^4.3.4"
+    },
+    "scripts": {
+        "prebuild": "rm -rf dist && rm -rf node_modules && npm install",
+        "build": "yarn test && tsc",
+        "pretest": "rm -rf test_report",
+        "test": "mocha -r ts-node/register 'tests/**/*.test.ts' --reporter mochawesome --reporter-options reportDir=test_report,reportFilename=test_report"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.2.18",
+        "@types/mocha": "^8.2.2",
+        "chai": "^4.3.4",
+        "mochawesome": "^6.2.2",
+        "ts-node": "^10.0.0"
+    }
 }
